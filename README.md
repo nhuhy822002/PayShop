@@ -1,10 +1,8 @@
-<Head>
-  <h1> Project nhỏ về shop bán mô hình Liên Minh 💻 </h1>
-  </Head>
-  <Body>
-  <h2> 
-    Các công nghệ đã sử dụng
-  </h2>
-  asdlk;á;ld
-  =ádasdasd
-  =sdasdas
+# Project nhỏ về shop bán mô hình Liên Minh 💻 
+## Các công nghệ đã sử dụng:
+```
+Asp.net core MVC
+Entity Framework Core
+Bootstrap
+```
+###### The smallest heading
