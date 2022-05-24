@@ -33,5 +33,7 @@ Bootstrap
   <img width="950" src= https://user-images.githubusercontent.com/72533740/170017612-8e4fbdcf-9c18-4547-81ec-2233e624b991.png alt="cli output"/>
 </p>
 
+---
+
 _README project được tham khảo và tạo bởi Hy with ❤️
    
