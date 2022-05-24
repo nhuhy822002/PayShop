@@ -5,4 +5,6 @@ Asp.net core MVC
 Entity Framework Core
 Bootstrap
 ```
-###### The smallest heading
+## Mô tả trang web:
+###### Giao diện tổng quan:
+![image](https://user-images.githubusercontent.com/72533740/170000482-4493c87d-fbd9-401d-a927-c58b1aad03be.png)
