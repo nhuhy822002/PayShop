@@ -1,4 +1,4 @@
-<h1 align="center"> Project nhỏ về shop bán mô hình Liên Minh </h1>
+<h1 align="center"> :octocat: Project nhỏ về shop bán mô hình Liên Minh :octocat: </h1>
 
 ## 💻 Các công nghệ đã sử dụng:
 ```
@@ -18,4 +18,5 @@ Bootstrap
    <img width="950" src= https://user-images.githubusercontent.com/72533740/170009299-a6c3be6d-0638-4c14-83e5-d855d004a34c.png alt="cli output"/> 
 </p>
 
-## 🎨 Các tính năng trang web:
+## ☑️ Các tính năng trang web:
+#### Đăng nhập:
