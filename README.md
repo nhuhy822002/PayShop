@@ -19,4 +19,19 @@ Bootstrap
 </p>
 
 ## ☑️ Các tính năng trang web:
-#### Đăng nhập:
+#### Tài khoản người dùng:
+- Đăng nhập và đăng ký
+<p align="center"> 
+  <img width="950" src= https://user-images.githubusercontent.com/72533740/170016567-eb51b3f5-8d26-448d-9d81-de95563abf77.png alt="cli output"/> 
+</p>
+
+#### Admin Panel:
+- Thêm, xóa, sửa
+- Tìm kiếm sản phẩm theo tên
+- Tìm kiếm sản phẩm theo thể loại 
+<p align="center"> 
+  <img width="950" src= https://user-images.githubusercontent.com/72533740/170017612-8e4fbdcf-9c18-4547-81ec-2233e624b991.png alt="cli output"/>
+</p>
+
+_README project được tham khảo và tạo bởi Hy with ❤️
+   
