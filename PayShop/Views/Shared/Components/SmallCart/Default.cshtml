@@ -1,0 +1,14 @@
+﻿@model SmallCartViewModel
+
+@if (Model != null)
+{
+    <p>Mặt hàng trong giỏ: <span class="badge badge-info">@Model.NumberOfItems</span> </p>
+    <p>Thành tiền: <b>@Model.TotalAmount.ToString("C2")</b></p>
+    <a class="btn btn-success mb-2" asp-controller="Cart" asp-action="Index">Xem giỏ</a>
+    <br />
+    <a class="btn btn-warning" asp-controller="Cart" asp-action="Clear">Xóa giỏ</a>
+}
+else
+{
+    <p class="lead m-0">Giỏ hàng đang trống.</p>
+}

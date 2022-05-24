@@ -1,0 +1,104 @@
+﻿@model IEnumerable<Page>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+<!--(ac)ViewBag.Fruit / hien thi apples tren trang-->
+<p>
+    <a asp-action="Create">Tạo mới</a>
+</p>
+<table class="table sorting" id="pages">
+    <!-- <thead>
+         <tr>
+             <th>
+                 (ac)Html.DisplayNameFor(model => model.Id)
+             </th>
+             <th>
+                 (ac)Html.DisplayNameFor(model => model.Title)
+             </th>
+             <th>
+                 (ac)Html.DisplayNameFor(model => model.Slug)
+             </th>
+             <th>
+                 (ac)Html.DisplayNameFor(model => model.Content)
+             </th>
+             <th>
+                 (ac)Html.DisplayNameFor(model => model.Sorting)
+             </th>
+             <th></th>
+         </tr>
+     </thead> -->
+    <thead>
+        <tr class="home">
+            <th>
+                Title
+            </th>
+            <th>
+                Slug
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <!--<tr>
+                <td>
+            (acong) Html.DisplayFor(modelItem => item.Id)
+                </td>
+                <td>
+                    Html.DisplayFor(modelItem => item.Title)
+                </td>
+                <td>
+                    Html.DisplayFor(modelItem => item.Slug)
+                </td>
+                <td>
+                    Html.DisplayFor(modelItem => item.Content)
+                </td>
+                <td>
+                    Html.DisplayFor(modelItem => item.Sorting)
+                </td>
+                <td>
+                   (acong)Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                          Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                          Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                </td>
+                    </tr>-->
+            <tr id="id_@item.Id" class="@item.Slug">
+                <td>
+                    @item.Title
+                </td>
+                <td>
+                    @item.Slug
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Sửa</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">Xem</a> |
+                    @if (item.Slug != "home")//them 1 doi tuong tuong tu
+                    {
+                        <a class="confirmDeletion" asp-action="Delete" asp-route-id="@item.Id">Xóa</a>
+                    }
+                </td>
+            </tr>
+        }
+
+
+    </tbody>
+</table>
+
+@section Scripts {
+    <script> //giữ chuột di chuyen bang tu do truc tiep
+        $("table#pages tbody").sortable({
+            items: "tr:not(.home)",
+            placeholder: "ui-state-highlight",
+            update: function () {
+                let ids = $("table#pages tbody").sortable("serialize");
+                let url = "/admin/pages/reorder";
+
+                $.post(url, ids, function () { });
+            }
+        })
+    </script>
+}

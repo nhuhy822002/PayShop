@@ -1,0 +1,99 @@
+﻿@model IEnumerable<Category>
+
+@{
+    ViewData["Title"] = "Categories";
+}
+
+<h1>Danh mục</h1>
+
+<p>
+    <a asp-action="Create">Tạo mới</a>
+</p>
+<table class="table sorting" id="categories">
+    <thead>
+        <tr>
+            <th>
+                Name
+            </th>
+            <th>
+                Slug
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr id="id_@item.Id">
+                <td>
+                    @item.Name
+                </td>
+                <td>
+                    @item.Slug
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Sửa</a> |
+                    <a class="confirmDeletion" asp-action="Delete" asp-route-id="@item.Id">Xóa</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@section Scripts {
+    <script>
+        $("table#categories tbody").sortable({
+            items: "tr:not(.home)",
+            placeholder: "ui-state-highlight",
+            update: function () {
+                let ids = $("table#categories tbody").sortable("serialize");
+                let url = "/admin/categories/reorder";
+
+                $.post(url, ids, function () { });
+            }
+        })
+    </script>
+}
+
+<!--<table class="table">
+    <thead>
+        <tr>
+            <th>
+                (Ac)Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                (Ac)Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                (Ac)Html.DisplayNameFor(model => model.Slug)
+            </th>
+            <th>
+                (Ac)Html.DisplayNameFor(model => model.Sorting)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+(Ac)foreach (var item in Model) {
+        <tr>
+            <td>
+                (Ac)Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                (Ac)Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                (Ac)Html.DisplayFor(modelItem => item.Slug)
+            </td>
+            <td>
+                (Ac)Html.DisplayFor(modelItem => item.Sorting)
+            </td>
+            <td>
+                (Ac)Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                (Ac)Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                (Ac)Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>-->
