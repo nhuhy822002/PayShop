@@ -1,5 +1,5 @@
 <Head>
-  <h1> Project về shop bán mô hình Liên Minh </h1>
+  <h1> Project về shop bán mô hình Liên Minh 💻 </h1>
   </Head>
   <Body>
   <h2> 
