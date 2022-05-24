@@ -36,4 +36,3 @@ Bootstrap
 ---
 
 _README project được tham khảo và tạo bởi Hy with ❤️_
-   
